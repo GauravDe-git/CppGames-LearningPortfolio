@@ -4,7 +4,13 @@ module.exports = {
     "./src/**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Montserrat: ["Montserrat", "sans-serif"],
+        OpenSans: ["Open Sans", "sans-serif"],
+        RetroGaming: ["Retro Gaming", "sans-serif"],
+      }
+    },
   },
   plugins: [],
 }
