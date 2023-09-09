@@ -16,7 +16,7 @@ const Header = () => {
           <nav className="flex flex-wrap items-center ml-auto mr-2 text-base border-gray-200 pl-1 gap-2">
             <a
               href="#_"
-              className="mr-5 p-2 text-lg font-medium rounded-lg transition hover:text-white hover:bg-blue-500"
+              className="mr-5 p-2 text-lg font-bold rounded-lg transition hover:text-white hover:bg-blue-500"
             >
               Home
             </a>

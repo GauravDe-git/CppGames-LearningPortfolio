@@ -42,13 +42,14 @@ const AboutMe = () => {
           </a>
         </div>
       </div>
-      <div className="md:w-2/5 flex flex-col items-center ">
+      <div className="md:w-1/5 flex flex-col items-center ">
         <img
           src={Avatar}
           alt="Gaurav De"
           className="w-48 h-48 rounded-full mb-4"
         />
-        <p className="text-sm mb-2">Aspiring Game Programmer</p>
+        <h2 className="text-xl font-bold mb-2">Gaurav De</h2>
+        <p className="text-xs mb-2">Aspiring Game Programmer</p>
         <div className="flex items-center text-sm">
           <IoLocationSharp />
           <span className="ml-2">Kolkata, India</span>
