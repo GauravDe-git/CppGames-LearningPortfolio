@@ -3,9 +3,9 @@ import {BsController} from 'react-icons/bs'
 
 const Header = () => {
   return (
-    <div className="min-h-screen bg-gray-100 min-w-screen">
+    <div className=" bg-gray-100 min-w-screen">
       {/* Header Menu Left */}
-      <header className="font-Montserrat w-full text-gray-700 bg-white border-t border-gray-100 shadow-sm body-font">
+      <header className="font-Montserrat w-full text-gray-700 bg-white border-t border-gray-100 shadow-md body-font">
         <div className="container flex items-center justify-between p-6 mx-auto">
           <div className="flex gap-2">
             <a className="font-RetroGaming flex items-center mb-4 font-light text-4xl text-gray-900 title-font md:mb-0 border-r pr-2">
