@@ -27,12 +27,12 @@ const Header = () => {
             >
               Learning
             </Link>
-            <a
-              href="#_"
+            <Link
+              to="/projects"
               className="p-2 text-lg font-medium rounded-lg transition hover:text-white hover:bg-blue-500"
             >
               Projects
-            </a>
+            </Link>
           </nav>
         </div>
       </header>

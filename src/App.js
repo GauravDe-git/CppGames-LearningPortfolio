@@ -3,6 +3,7 @@ import ReactDOM  from "react-dom/client";
 import Homepage from "./components/Homepage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Learning from "./components/Learning";
+import Projects from "./components/Projects";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     {
         path: "/learning",
         element: <Learning/>
+    },
+    {
+        path: "/projects",
+        element: <Projects/>
     }
 ])
 
