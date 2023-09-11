@@ -7,9 +7,9 @@ import {RxHobbyKnife} from 'react-icons/rx'
 
 const Description = () => {
   return (
-    <>
+    <div>
     {/*Why C++?*/}  
-    <div className='md:w-2/3 container flex flex-col  mx-auto my-10 p-2 bg-white shadow-lg border-orange-400 border-b-4'>
+    <div className='md:w-2/3 container flex flex-col mx-auto my-10 p-2 bg-white shadow-lg border-orange-400 border-b-4'>
      <div className='flex items-center justify-between'>
         <h1 className='font-Montserrat text-4xl p-2'> Why C++ ? </h1>
         <LiaLaptopCodeSolid color='Orange' size={60}/>
@@ -65,7 +65,7 @@ const Description = () => {
     </div>
     
     
-    </>
+   </div>
   )
 }
 

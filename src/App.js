@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM  from "react-dom/client";
 import Homepage from "./components/Homepage";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Learning from "./components/Learning";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -12,6 +14,17 @@ const App = () => {
     );
 }
 
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <App/>
+    },
+    {
+        path: "/learning",
+        element: <Learning/>
+    }
+])
+
 root.render(
-    <App />
+    <RouterProvider router={router} />
 )

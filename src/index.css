@@ -18,7 +18,12 @@
     font-family: 'Retro Gaming';
     src: local('Retro Gaming'), url('./Assets/RetroGaming.ttf') format('truetype');
 }
-  
+
+body {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
 
   
   
