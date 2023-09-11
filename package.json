@@ -2,9 +2,12 @@
   "name": "cppgames-learningportfolio",
   "version": "1.0.0",
   "description": "The C++ Learning Portfolio for the Microcredentials Course: Cpp For Games Programming at Breda University Of Applied Sciences.",
+  "homepage": "https://GauravDe-git.github.io/CppGames-LearningPortfolio",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "build": "parcel build src/index.html --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "test": "jest"
   },
   "repository": {
@@ -16,8 +19,8 @@
   "bugs": {
     "url": "https://github.com/GauravDe-git/CppGames-LearningPortfolio/issues"
   },
-  "homepage": "https://github.com/GauravDe-git/CppGames-LearningPortfolio#readme",
   "devDependencies": {
+    "gh-pages": "^6.0.0",
     "parcel": "^2.9.3",
     "postcss": "^8.4.29",
     "process": "^0.11.10",
