@@ -37,7 +37,14 @@ const Week = ({ weekData }) => {
             }
           })}
           <h2 className='font-bold text-lg'>Check</h2>
-          <p className='mb-4'>{weekData.check}</p>
+          {weekData.check.map((block, index) => {
+            switch (block.type) {
+              case 'text':
+                return <p key={index} className='mb-4'>{block.content}</p>;
+              default:
+                return null;
+            }
+          })}
           <h2 className='font-bold text-lg'>Act</h2>
           <p className='mb-4'>{weekData.act}</p>
         </div>
