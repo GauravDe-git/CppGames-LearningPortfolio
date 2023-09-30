@@ -27,9 +27,100 @@ export const weeksData = [
       { type: 'text', content: 'In addition, I will dive deeper into the C++ for Games framework, mapping out the implementation of key game features. I shall experiment with tasks such as opening a window, loading sprites, and exploring sprite animations. To keep myself on track, I have set specific milestones: mastering pointers and arrays by Wednesday and delving into classes by Friday. Throughout the week, I will continue learning about the framework, recognizing its vast potential. These efforts align directly with my ultimate goal of developing a 2D game, marking substantial progress in my game development journey' },
       ],
       do: [
-        { type: 'text', content: 'This week, I successfully tackled most of the planned tasks. I managed to complete my Game Design Document (GDD), although I recognize the need for potential revisions in the future. I diligently attended lectures on pointers, arrays, and classes, effectively grasping the fundamental concepts behind these topics as intended. Additionally, I made sure to cover the remaining topics, such as bitwise operators and functions, that were not addressed in the lectures due to time constraints. Armed with this expanded knowledge of C++, I also delved into the C++ for Games framework, exploring its various APIs. During the lecture\'s lab showcase, we navigated opening windows and loading sprites within the framework, tasks I understood thoroughly and managed to experiment with, aligning with my initial plans.' },
-        
+        { type: 'text', content: 'This week, I successfully tackled most of the planned tasks. I managed to complete my Game Design Document (GDD), although I recognize the need for potential revisions in the future. I diligently attended lectures on pointers, arrays, and classes, effectively grasping the fundamental concepts behind these topics as intended. Additionally, I made sure to cover the remaining topics, such as bitwise operators and functions, that were not addressed in the lectures due to time constraints. Armed with this expanded knowledge of C++, I also delved into the C++ for Games framework, exploring its various APIs. During the lecture\'s lab showcase, we navigated opening windows and loading sprites within the framework. I have added the code snippet for opening window and loading sprites below.' },        
       { type: 'text', content: '' },
+      { type: 'code', content: `
+      #include"Graphics/Window.hpp"
+      #include"Graphics/Image.hpp"
+      #include"Graphics/Sprite.hpp"
+      #include"Graphics/ResourceManager.hpp" //It includes font.hpp   *Transitive Includes*
+      #include"Graphics/SpriteAnim.hpp"      //It includes spritesheet.hpp
+      #include"Graphics/Timer.hpp"
+      
+      #include <fmt/core.h>
+      
+      #include <iostream>
+      
+      using namespace Graphics;
+      
+      Window window;
+      Image image;
+      Sprite sprite;
+      
+      const int SCREEN_WIDTH = 400;
+      const int SCREEN_HEIGHT = 300;
+      
+      int main()
+      {
+        auto idleSprites = ResourceManager::loadSpriteSheet("assets/textures/Idle_Sheet.png", 153, 127, 0, 0, BlendMode::AlphaBlend);
+        SpriteAnim idleAnim(idleSprites,10.0f);
+      
+        //Initialization Settings:
+        image.resize(SCREEN_WIDTH, SCREEN_HEIGHT);
+      
+        window.create(L"Mini Assailants", SCREEN_WIDTH,SCREEN_HEIGHT);
+        window.show();
+        //window.setVSync(false);
+      
+        Timer timer;
+        double      totalTime = 0.0;
+        uint64_t    frameCount = 0ull;
+        std::string fps = "FPS: 0";
+      
+        while (window)
+        {
+          timer.tick();
+      
+          // Game Logic Here (Update Loop)
+      
+          idleAnim.update(timer.elapsedSeconds());
+      
+          image.clear(Color::Black);
+      
+          // Draw Sprites here (Render Loop)
+      
+          image.drawSprite(idleAnim, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+      
+          image.drawText(Font::Default, fps, 10, 10, Color::White);
+      
+          window.present(image);
+      
+          Event event;
+          while (window.popEvent(event))
+          {
+            switch (event.type)
+            {
+            case Event::Close:
+              window.destroy();
+              break;
+            case Event::KeyPressed:
+            {
+              switch (event.key.code)
+              {
+              case KeyCode::Escape:
+                window.destroy();
+                break;
+              }
+            }
+            }
+          }
+      
+          ++frameCount;
+      
+          totalTime += timer.elapsedSeconds();
+          if (totalTime > 1.0)
+          {
+            fps = fmt::format("FPS: {:.3f}", static_cast<double>(frameCount) / totalTime);
+      
+            std::cout << fps << std::endl;
+      
+            frameCount = 0;
+            totalTime = 0.0;
+          }
+        }
+      
+        return 0;
+      }` },
       ],
       check: [{type: 'text', content: 'In this past week, I successfully completed most of my planned tasks, but I\'m acutely aware that there\'s significant room for improvement. One notable aspect to address is the time management; I aimed to finish my Game Design Document (GDD) during the first week, but it extended beyond that timeframe. This highlights the importance of refining my project planning skills.'},
       {type: 'text', content: 'While I diligently followed the lectures and gained a solid understanding of pointers and classes in C++, I recognize that practical implementation in my game project demands further practice. Similarly, becoming proficient in utilizing the C++ for Games framework will require ongoing dedication and practice.'},
