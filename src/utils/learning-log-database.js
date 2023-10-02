@@ -130,21 +130,176 @@ export const weeksData = [
     {
       title: 'Week 3',
       published: 'September 18, 2023',
-      description: 'The third week.',
+      description: 'Templates, Lambdas, and even more intermediate stuff! ',
       plan: [
-        { type: 'text', content: '-' },
-
-      { type: 'text', content: '' },
+        { type: 'text', content: 'For Week 3, I\'ll stick to attending the lectures and dive into some more advanced C++ stuff like Function templates, operator overloading, and lambdas. It might take me about 8 to 12 hours in total to learn and practice these. In terms of the game framework, I want to figure out how to make the player move using input controls. It seems like a pretty straightforward task, and I think I can get it done in around 30 minutes to an hour.' },
+        { type: 'text', content: 'I also realize I need more practice with pointers and classes from Week 2. So, I\'ll go over the lectures again, read the chapters about pointers and classes in the \'Beginning C++ 20\' book, and do some online exercises that involve them. I plan to spend at least 1 to 2 hours on this every day this week. With all of these, I aim to become more comfortable with working on my game project.' },
       ],
       do: [
-        { type: 'text', content: '-' },
+        { type: 'text', content: 'I managed to do what I planned this week. I attended the lectures and learned about Function templates, Lambdas, and operator overloading. I also went back to Week 2 lessons on pointers and classes and read the relevant parts in the \'Beginning C++ 20\' book. I practiced with online exercises for pointers and classes. However, I realized that I need more time for practical applications and exercises on lambdas and templates, just like I did for pointers and classes.' },
+        { type: 'text', content: 'In the lab, I gained practical experience with the input system, and I\'ve shared the code snippet below to show what I\'ve learned:' },
+        {type: 'code', content:
+        `//Player Movement Using Keyboard class and Input class:-
+        //----Using Keyboard Class:-------
+        #include"Graphics/Keyboard.hpp"
         
-      { type: 'text', content: '' },
+         // Initialize player pos in global scope
+        float player_X = SCREEN_WIDTH / 2;
+        float player_Y = SCREEN_HEIGHT / 2;
+        float playerSpeed = 60.0f; //Also initialize the player speed
+        
+         // In the game loop, in the game-logic/update-loop section:
+        
+        auto keyState = Keyboard::getState();
+        if (keyState.W)
+        {
+          player_Y -= playerSpeed * timer.elapsedSeconds();
+        }
+        if (keyState.S)
+        {
+          player_Y += playerSpeed * timer.elapsedSeconds();
+        }
+        if (keyState.A)
+        {
+          player_X -= playerSpeed * timer.elapsedSeconds();
+        }
+        if (keyState.D)
+        {
+          player_X += playerSpeed * timer.elapsedSeconds();
+        }
+        
+        // In the draw-sprite/render-loop section:
+        image.drawSprite(playerIdleAnim, static_cast<int>(player_X), static_cast<int>(player_Y)); //used the playerPos global variables, with int static_cast
+        
+        //-------Using Input Class:-------
+        #include"Graphics/Input.hpp"
+        
+        // In game-logic/update-loop section:
+        Input::update();
+        player_X += Input::getAxis("Horizontal") * playerSpeed * timer.elapsedSeconds();
+        player_Y -= Input::getAxis("Vertical") * playerSpeed * timer.elapsedSeconds();
+        
+        //---Loading Background Image---//
+        
+        // create image, and sprite in main
+        auto backgroundStage1 = ResourceManager::loadImage("assets/textures/stage1.png");
+        Sprite bg1Sprite(backgroundStage1);
+        
+        // draw sprite in the render loop
+        image.drawSprite(bg1Sprite, 0, 0); `}
       ],
-      check: [{type: 'text', content: '-'},
+      check: [{type: 'text', content: 'Things mostly went as planned this week, which is a positive. However, I\'ve noticed that I\'m trying to tackle complex C++ topics as a beginner, which can be overwhelming. I\'ve also realized that I\'ve done minimal work on the game project, mainly involving window setup, sprites, and input. This raises concerns about meeting the project deadline. Regarding feedback, I haven\'t received any yet because there isn\'t much code to review at this stage.'},
       {type: 'text', content: ''},
       {type: 'text', content: ''}],
-      act: '-'
+      act: 'This week, I\'ve learned that practical practice and solving programming exercises are key to understanding complex topics. I\'ve improved my grasp of pointers and classes from Week 2 through practice and plan to do the same for upcoming concepts. To enhance my skills, I\'ll dive deeper into the C++ for Games framework documentation to better implement game features. Most of my time estimates were accurate, but for newer topics, I\'ll dedicate more daily practice time to reinforce my understanding.'
+    },
+    {
+      title: 'Week 4',
+      published: 'September 25, 2023',
+      description: 'Week 4.',
+      plan: [
+        { type: 'text', content: '.' },
+        { type: 'text', content: '.' },
+      ],
+      do: [
+        { type: 'text', content: '.' },
+        
+      { type: 'text', content: '.' },
+      ],
+      check: [{type: 'text', content: '.'},
+      {type: 'text', content: ''},
+      {type: 'text', content: ''}],
+      act: '.'
+    },
+    {
+      title: 'Week 5',
+      published: 'October 02, 2023',
+      description: 'Week 5.',
+      plan: [
+        { type: 'text', content: '.' },
+        { type: 'text', content: '.' },
+      ],
+      do: [
+        { type: 'text', content: '.' },
+        
+      { type: 'text', content: '.' },
+      ],
+      check: [{type: 'text', content: '.'},
+      {type: 'text', content: ''},
+      {type: 'text', content: ''}],
+      act: '.'
+    },
+    {
+      title: 'Week 6',
+      published: 'October 09, 2023',
+      description: 'Week 6.',
+      plan: [
+        { type: 'text', content: '.' },
+        { type: 'text', content: '.' },
+      ],
+      do: [
+        { type: 'text', content: '.' },
+        
+      { type: 'text', content: '.' },
+      ],
+      check: [{type: 'text', content: '.'},
+      {type: 'text', content: ''},
+      {type: 'text', content: ''}],
+      act: '.'
+    },
+    {
+      title: 'Week 7',
+      published: 'October 23, 2023',
+      description: 'Week 7.',
+      plan: [
+        { type: 'text', content: '.' },
+        { type: 'text', content: '.' },
+      ],
+      do: [
+        { type: 'text', content: '.' },
+        
+      { type: 'text', content: '.' },
+      ],
+      check: [{type: 'text', content: '.'},
+      {type: 'text', content: ''},
+      {type: 'text', content: ''}],
+      act: '.'
+    },
+    {
+      title: 'Week 8',
+      published: 'October 30, 2023',
+      description: 'Week 8.',
+      plan: [
+        { type: 'text', content: '.' },
+        { type: 'text', content: '.' },
+      ],
+      do: [
+        { type: 'text', content: '.' },
+        
+      { type: 'text', content: '.' },
+      ],
+      check: [{type: 'text', content: '.'},
+      {type: 'text', content: ''},
+      {type: 'text', content: ''}],
+      act: '.'
+    },
+    {
+      title: 'Week 9',
+      published: 'November 06, 2023',
+      description: 'Week 9.',
+      plan: [
+        { type: 'text', content: '.' },
+        { type: 'text', content: '.' },
+      ],
+      do: [
+        { type: 'text', content: '.' },
+        
+      { type: 'text', content: '.' },
+      ],
+      check: [{type: 'text', content: '.'},
+      {type: 'text', content: ''},
+      {type: 'text', content: ''}],
+      act: '.'
     },
     // Add more weeks data here...
   ];
