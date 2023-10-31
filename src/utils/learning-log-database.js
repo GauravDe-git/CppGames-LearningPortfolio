@@ -196,20 +196,68 @@ export const weeksData = [
     {
       title: 'Week 4',
       published: 'September 25, 2023',
-      description: 'Week 4.',
+      description: 'Hallo en welkom to The Standard Template Library',
       plan: [
-        { type: 'text', content: '.' },
-        { type: 'text', content: '.' },
+        { type: 'text', content: 'For Week 4, my plan is to keep attending the lectures and delve into more intermediate C++ topics like R-Value reference, move semantics, and learn about class templates. I also aim to get an introduction to the STL module in C++. This will help me build a solid understanding of these intermediate features in C++ and enable me to write slightly more complex programs.' },
+        { type: 'text', content: 'Additionally, I\'m eager to put my knowledge from the previous week into practice by working with classes in my game project. This involves creating a player class and separating it from the main code, which aligns with the standard way of writing C++ applications following Object-Oriented Programming (OOP) principles.' },
+        {type: 'text', content: 'I estimate that learning about these newer intermediate C++ topics like move semantics and class templates may take me about 6 hours, and I plan to cover them on Tuesday and Wednesday. Learning the basics of the STL module should take around 1 to 2 hours, which I\'ll do on Thursday.'}
       ],
       do: [
-        { type: 'text', content: '.' },
+        { type: 'text', content: 'I managed to complete most of my planned tasks for the week, but there were a few exceptions. I attended the lectures as intended and learned about r-value reference and move semantics. However, there wasn\'t a lecture on class templates, so I couldn\'t manage to get the time to explore that topic on my own.' },
+        { type: 'text', content: 'In terms of the STL module, I got an introduction through the lectures and also covered some important concepts related to STL containers and iterators, including vectors, arrays, and maps. Additionally, we delved into the handy \'for auto\' loop, which was more extensive than my initial plan for the week.' },
+        {type: 'text', content: 'I did spend some time self-studying move semantics, but I couldn\'t dedicate as many hours as I had originally planned. This is something I\'ll need to revisit in the coming weeks. In the lab, we worked on creating a player class together, which I successfully implemented in my game. We also explored collisions in the framework using Axis-Aligned Bounding Box from the math library, a topic I hadn\'t initially planned to cover. I have attached some code snippets from some of my progress this week below.'},
+        {type: 'code', content: `// The player class header file
+        class Player
+        {
+        public:
+            // Default constructor.
+            Player();
         
-      { type: 'text', content: '.' },
+            explicit Player(const glm::vec2& pos, const Graphics::SpriteAnim& sprite);
+        
+            void update(float deltaTime);
+        
+            void draw(Graphics::Image& image);
+        
+            void setPosition(const glm::vec2& pos);
+            const glm::vec2& getPosition() const;
+        
+            void translate(const glm::vec2& t);
+        
+            const Math::AABB getAABB() const;
+        
+        private:
+            glm::vec2 position{ 0 };
+            glm::vec2 velocity{ 0 };
+            float speed{ 60.0f };
+            Graphics::SpriteAnim sprite;
+            Math::AABB aabb;
+        };`},
+        {type: 'code', content: `
+        // Collision checks using AABB
+        auto aabb = player.getAABB();
+        glm::vec2 correction{ 0 };
+        if (aabb.min.x < 0)
+        {
+            correction.x = -aabb.min.x;
+        }
+        if (aabb.min.y < 0)
+        {
+            correction.y = -aabb.min.y;
+        }
+        if (aabb.max.x >= image.getWidth())
+        {
+            correction.x = image.getWidth() - aabb.max.x;
+        }
+        if (aabb.max.y >= image.getHeight())
+        {
+            correction.y = image.getHeight() - aabb.max.y;
+        }`}
       ],
-      check: [{type: 'text', content: '.'},
+      check: [{type: 'text', content: 'Consistently attending lectures has been a positive choice. Exploring unexpected topics like STL container types and the collision system in the framework added value to my learning. However, the absence of a class templates lecture and not dedicating enough self-study hours were drawbacks. My game codebase is growing, but I\'m eager for feedback. Yet, most of what I\'ve done aligns with our lab work, so there isn\'t much extra for review at this stage'},
       {type: 'text', content: ''},
       {type: 'text', content: ''}],
-      act: '.'
+      act: 'In Week 4, the highlight was my introduction to STL, which I believe will play a crucial role in my project, especially when creating groups of enemies using vectors. To improve, I\'ll focus on increasing my self-study hours and practical application of what we\'ve learned. I also realized that my time estimates were a bit off due to insufficient self-study hours. To address this, I\'m thinking of breaking down my self-study into shorter intervals, rather than attempting longer 3 to 6-hour sessions to better absorb new C++ topics introduced in the lectures.'
     },
     {
       title: 'Week 5',

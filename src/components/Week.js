@@ -52,7 +52,7 @@ const Week = ({ weekData }) => {
                 );
               case "code":
                 return (
-                  <pre key={index} className="mx-auto max-h-[500px] w-3/4 overflow-auto">
+                  <pre key={index} className="mx-auto my-2 max-h-[500px] w-3/4 overflow-auto">
                     <code className="language-cpp">{block.content}</code>
                   </pre>
                 );
