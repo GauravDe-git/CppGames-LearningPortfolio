@@ -262,93 +262,148 @@ export const weeksData = [
     {
       title: 'Week 5',
       published: 'October 02, 2023',
-      description: 'Week 5.',
+      description: 'Progressing on the Game Project.',
       plan: [
-        { type: 'text', content: '.' },
-        { type: 'text', content: '.' },
+        { type: 'text', content: 'For Week 5, my plan is to attend lectures and learn about new topics like Random numbers in C++, date, and time. Additionally, I\'ll revisit some previously taught topics to deepen my understanding. On Monday and Tuesday, I\'ll review slides on lambdas and operator overloading. I\'ll also read about these topics in the Beginning C++ 20 book. I\'ll spend 2 hours on each, revising theory, and another 2 hours doing practical exercises found online. Websites like w3schools and geeksforgeeks offer useful exercises. Alongside this, I\'ll continue building and improving my game during the lab portion of the lectures, dedicating 2 to 3 hours every day to this project, in addition to the time spent on learning and practicing C++ theory.' },
+        { type: 'text', content: '' },
       ],
       do: [
-        { type: 'text', content: '.' },
+        { type: 'text', content: 'I successfully completed many of the planned tasks for the week, including revising operator overloading and lambdas. I also made progress on my game project. While the lectures didn\'t cover the expected topics like random numbers or date and time in C++, we explored ranges and views in C++. In the lab, we learned valuable concepts for our game, such as using state machines, flipping sprites, and implementing inheritance to create a base entity class for players and enemies. My time estimates were more accurate this time, as I allocated a modest amount of hours (around 2 to 3 everyday) for specific tasks, allowing me to achieve what I had planned.' },
         
-      { type: 'text', content: '.' },
+      { type: 'text', content: 'I am sharing the code snippet below for my entity base class from my game' },
+      {type: 'code', content: 
+      `
+      #include <Camera.hpp>
+      #include <Graphics/Image.hpp>
+      #include <Math/AABB.hpp>
+      
+      class Entity
+      {
+      public:
+        virtual ~Entity() = default;
+      
+        virtual void update(float deltaTime) = 0;
+        virtual void draw(Graphics::Image& image,const Camera& camera) = 0;
+      
+        void setPosition(const glm::vec2& pos) { transform.setPosition(pos); }
+        const glm::vec2& getPosition() const { return transform.getPosition(); }
+        void translate(const glm::vec2& t) { transform.translate(t); }
+        const Math::AABB getAABB() const { return  transform * aabb; }
+      
+      protected:
+        Entity() = default;
+        Entity(const glm::vec2& pos, const Math::AABB& _aabb);
+      
+        Math::AABB aabb;
+        Math::Transform2D transform;
+      };`}
       ],
-      check: [{type: 'text', content: '.'},
+      check: [{type: 'text', content: 'Things are going according to plan, and I\'m achieving my goals within the set time frame. I\'ve noticed that in the beginning of the week, I plan to go through some theory during the lectures. However, now that we\'ve progressed, I realize it\'s more efficient to dedicate the entire lecture session to coding. I can then learn about newer theory topics from the slides and the book on my own, which has been an important learning point for me. I didn\'t take too much feedback yet, because most of my code is still based on the learnings from the lab session.'},
       {type: 'text', content: ''},
       {type: 'text', content: ''}],
-      act: '.'
+      act: 'My main takeaway this week is about time management. Dedicating a modest amount of time daily for each task, like reading theory or working on the game, has proven more effective than planning longer hours as I did in previous weeks. Additionally, it\'s become clear that I shouldn\'t solely rely on lectures to learn new theory. Instead, I should use lectures more for getting feedback on my game and focus on reading theory from the slides independently.'
     },
     {
       title: 'Week 6',
       published: 'October 09, 2023',
-      description: 'Week 6.',
+      description: 'Design Patterns!',
       plan: [
-        { type: 'text', content: '.' },
-        { type: 'text', content: '.' },
+        { type: 'text', content: 'For Week 6, I plan to revisit some past topics like class templates and move semantics, dedicating 3 hours on Monday and Tuesday for a thorough review, including practice exercises. On Wednesday, I\'ll spend 3 hours learning about random numbers and date/time in C++ from the slides and the C++ 20 book. During lectures, I\'ll focus on understanding the covered topics, and in the lab sessions, I aim to seek feedback and enhance my game. I have a goal to develop a custom camera class for my game, and I\'ll discuss this in the lab sessions. Additionally, I\'ll commit at least 2 hours each day to working on my game project.' },
+        { type: 'text', content: '' },
       ],
       do: [
-        { type: 'text', content: '.' },
+        { type: 'text', content: 'I successfully completed all the tasks in my plans for Week 6, and my time estimates turned out to be accurate and achievable for me. I revisited topics like move semantics and class templates as planned and also learned about random numbers in C++ along with the chrono library for date and time. In the lectures, we gained a foundation on the singleton game programming pattern, and during lab sessions, we explored steering behaviors, including learning about vectors and vector math on Thursday, which is valuable for moving objects in our games. Additionally, I successfully implemented a basic camera class for my game.' },
         
-      { type: 'text', content: '.' },
+      { type: 'code', content: 
+      `#include <glm/vec2.hpp>
+
+      class Camera
+      {
+      public:
+        Camera() = default;
+      
+        explicit Camera(const glm::vec2& pos)
+          : position{pos}
+        {}
+      
+        void setPosition(const glm::vec2& pos) { position = pos; }
+      
+        const glm::vec2& getPosition() const { return position; }
+      
+        glm::vec2 getViewPosition() const { return -position; }
+      
+      private:
+        glm::vec2 position;
+      };` },
       ],
-      check: [{type: 'text', content: '.'},
-      {type: 'text', content: ''},
-      {type: 'text', content: ''}],
-      act: '.'
+      check: [{type: 'text', content: 'Everything went smoothly this week as I covered various C++ topics independently, not relying solely on lectures. I also communicated in the lab class about the camera needed for my game, allowing me to create the camera class. I received feedback that it was set up properly.'},],
+      act: 'With the experiences from previous weeks, I\'ve become better at planning accurately at the start of the week and estimating time correctly. However, I realize I need to improve the pace at which I work on my actual game project. A significant portion of my time in the week is still dedicated to learning C++ topics. With fewer weeks remaining, I need to shift my focus and dedicate more time to my game project.'
     },
     {
       title: 'Week 7',
       published: 'October 23, 2023',
-      description: 'Week 7.',
+      description: 'My games\' a 2D brawler!',
       plan: [
-        { type: 'text', content: '.' },
-        { type: 'text', content: '.' },
+        { type: 'text', content: 'This week, I aim to shift my focus more towards my game project and reduce the time spent on learning C++ theory. However, I\'ll allocate around 2-3 hours on Monday to learn about smart pointers. The main goal is to enhance the core functionality and add key features to my game project. I plan to dedicate a minimum of 4 hours every day to my game project to ensure progress. Additionally, I\'ll attend lectures, grasp the taught topics, and seek feedback during the lab session. Specifically, I aim to implement a level class to efficiently manage different levels in my game.' },
       ],
       do: [
-        { type: 'text', content: '.' },
-        
-      { type: 'text', content: '.' },
+        { type: 'text', content: 'I successfully learned about smart pointers on Monday, dedicating the planned time. Although I couldn\'t fully commit the intended 4 hours each day to my game project, I still made some progress throughout the week. I actively participated in the lectures covering topics like event queues, circular buffer, and state machine design patterns. During the lab session, I shared my code, sought feedback, and worked on enhancing my game features and code. I successfully implemented a level class as part of my plan.' },
+        {type: 'code', content:
+      `#include <Background.hpp>
+      #include <Camera.hpp>
+      #include <Player.hpp>
+      
+      class Level {
+      public:
+        Level();
+      
+        Level(const std::string& backgroundPath, int topEdgeCollision);
+      
+        void LoadLevelAssets();
+        void SetLevel(int levelNumber);
+      
+        void Update(float deltaTime);
+        void Draw(Graphics::Image& image, const glm::vec2& offset);
+      
+        Player& getPlayer() { return player; }
+      
+      private:
+        Background background;
+        Player player;
+        std::string backgroundPath;
+        int topEdgeCollision;
+      };`}
       ],
-      check: [{type: 'text', content: '.'},
+      check: [{type: 'text', content: 'Things went well this week, and I managed to accomplish my planned tasks. However, I was a bit inconsistent in dedicating the full 4 hours every day to my game project. I received valuable feedback during the lab session, particularly on my code. While the level class was mostly fine, I did make some minor tweaks based on the feedback.'},
       {type: 'text', content: ''},
       {type: 'text', content: ''}],
-      act: '.'
+      act: 'My key takeaway from this week is the need to strictly adhere to my planned schedule and dedicate longer hours each day. Even though I aimed for 4 hours daily, I realized that falls short of the required 40 hours per week for this course. Moving forward, I must commit more time to meet the demands of the project.'
     },
     {
       title: 'Week 8',
       published: 'October 30, 2023',
-      description: 'Week 8.',
+      description: 'Player and Enemy combat',
       plan: [
-        { type: 'text', content: '.' },
-        { type: 'text', content: '.' },
+        { type: 'text', content: 'With only two weeks left, my focus is fully on the game project. I plan to dedicate 4-5 hours every day to work on it. Specifically, I\'ll invest more effort into refining the player and enemy classes. This involves adding animations to the player class, implementing a state machine for state transitions, ensuring smooth player movement in the game world, and addressing collision checks between the player and the screen edges. These improvements are crucial for a polished final project. I also plan to get feedback during the scheduled sessions on teams.' },
       ],
       do: [
-        { type: 'text', content: '.' },
-        
-      { type: 'text', content: '.' },
+        { type: 'text', content: 'This week went well as I committed significant hours daily to my game project, meeting my planned goals. I focused on enhancing the player class, implementing state machines, and adding animations. Additionally, I attended feedback sessions, allowing my code to be reviewed, and incorporated suggestions for improvement.' },
       ],
-      check: [{type: 'text', content: '.'},
-      {type: 'text', content: ''},
-      {type: 'text', content: ''}],
-      act: '.'
+      check: [{type: 'text', content: 'I  think this week went really well considering how I was able to have significant progress in my game. I was able to get a lot of feedback on my code during the teams sessions and incorporate many changes to my code according to them to fix various bugs/ issues .'},],
+      act: 'With little time left, I\'m working hard on my game project to meet my deadlines. Right now, my main goal is to improve the enemy part of the game and make sure the player and enemies interact smoothly, which is crucial for how the game will play.'
     },
     {
       title: 'Week 9',
       published: 'November 06, 2023',
-      description: 'Week 9.',
+      description: 'The Final Week~',
       plan: [
-        { type: 'text', content: '.' },
-        { type: 'text', content: '.' },
+        { type: 'text', content: 'As the final week approaches, my plan is to focus on completing all the remaining features of my game. I\'m aiming to dedicate more than 6 hours every day to ensure I finish the core gameplay elements. Specifically, I need to put in extra effort on the enemy class and refine the combat system between the player and the enemy. Gathering feedback during the sessions will be crucial. Additionally, I must include a beginning and end screen in my game to meet the project requirements, ensuring it has a clear start, middle, and end.' },
       ],
       do: [
-        { type: 'text', content: '.' },
-        
-      { type: 'text', content: '.' },
+        { type: 'text', content: 'In the final week, I gave my best effort to bring my game to a deliverable state. Despite having ambitious plans in my initial game design document, such as parallax backgrounds, multiple enemy types, multiple levels, and boss fights, time constraints led to some features being left out. However, I successfully implemented the core mechanic of player-enemy combat. The game loop functions as intended, with the player winning upon defeating the enemy and facing defeat if the enemy prevails.' },
       ],
-      check: [{type: 'text', content: '.'},
-      {type: 'text', content: ''},
-      {type: 'text', content: ''}],
-      act: '.'
+      check: [{type: 'text', content: 'Looking back at the whole course, I learned a lot about C++ and finished my 2D game project, even though it doesn\'t have many features. That part went well. But I realize I could have done more if I had spent more time in the earlier weeks. I got helpful feedback on my game during the course, and I\'m happy with what I learned.'},],
+      act: 'Looking back, I didn\'t estimate time well in the beginning, but I got better later on. Moving forward, I want to improve my C++ skills. For my game, I plan to make the code better, add more enemy types, extra levels, and maybe some pickups. I\'m also thinking of using the game as my BUAS CMGT intake assignment after the further improvements.'
     },
-    // Add more weeks data here...
   ];
   
