@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import sc1 from "../Assets/sc1.png";
-import sc2 from "../Assets/sc2.png";
-import sc3 from "../Assets/sc3.png"
+import sc1 from "../Assets/1.png";
+import sc2 from "../Assets/2.png";
+import sc3 from "../Assets/3.png"
 
 const Projects = () => {
   return (
@@ -12,19 +12,25 @@ const Projects = () => {
       <div className="flex-grow">
         <div className="md:w-2/3 container mx-auto my-16 bg-gray-50 shadow-md p-16">
           <h1 className="text-4xl font-bold mb-4">Mini Assailants</h1>
-          <p className="mb-4">Mini Assailants is an exciting 2D beat 'em up game that pays homage to the classic beat 'em up titles of the past while injecting its own unique charm. Drawing inspiration from beloved classics like Little Fighter 2 and Hero Fighter, Mini Assailants offers a thrilling gameplay experience that combines fast-paced action, engaging combat mechanics, and a touch of nostalgia.</p>
+          <p className="mb-4">Mini Assailant's is a 2D Beat'em Up fighting game that draws inspiration from childhood favorites like Hero Fighter and Little Fighter 2, both still beloved indie games with a strong fanbase. In this game, players command a formidable fighter with special abilities such as a fire punch and uppercut. Engaging in intense button-mashing, players confront incoming enemies. Special attacks consume 'Mana Points' (MP), and defeating enemies offers a chance to obtain health (hp) or mana (mp) potions, along with collectible coins. The game spans three levels: the first set in a cyberpunk city with goblins and skeletons, leading to a powerful golem boss; the second in an abandoned industry site featuring harpies and centaurs, concluding with a formidable gargoyle boss; and the final level in an experimental lab where agile cerberus creatures culminate in a showdown with the ultimate boss, the Flying Eye. Players can select their desired level from the menu.</p>
           <h2 className="text-3xl font-bold mb-2">Controls</h2>
           <div className="mb-4">
             <p><span className="font-bold">W,A,S,D or the Arrow Keys: </span> Move the player</p>
             <p><span className="font-bold">H: </span> Light Attack</p>
-            <p><span className="font-bold">Double Tap H: </span> Heavy Attack</p>
-            <p><span className="font-bold">Y: </span> Special Attack</p>
+            <p><span className="font-bold">Double Tap H: </span> Light Attack 2</p>
+            <p><span className="font-bold">J: </span> Heavy Attack</p>
+            <p><span className="font-bold">Double Tap J: </span> Heavy Attack 2</p>
+            <p><span className="font-bold">Y: </span> Special Attack 1</p>
+            <p><span className="font-bold">Y: </span> Special Attack 2</p>
+            <p><span className="font-bold">P: </span> Pause Game</p>
             <p className="mt-2 font-bold">Settings</p>
             <p><span className="font-bold">V: </span> Toggle V-Sync</p>
             <p><span className="font-bold">F11: </span>Switch/Exit FullScreen</p>
+            <p><span className="font-bold">Esc: </span>Exit Game</p>
           </div>
           <h2 className="text-3xl font-bold mb-2">Objective</h2>
-          <p className="mb-4">The primary objective in Mini Assailants is to move forward in the level and defeat the adversary ahead using the versatile combat mechanics at the player character's disposal. These mechanics include basic light and heavy attack, along with a special move. </p>
+          <p className="mb-4">In this game, the player controls a fighter who possesses various attacks and special abilities. The goal of the game is to move forward in the level and defeat the waves of all incoming enemies. The special attacks of the player consume 'mana points'. Defeating enemies drop coins, and additionally, there is a random chance to get drops of health potions or mana potions which can refill the respective stats of the player. To 'win', the player is required to defeat enemies in all levels. Health dropping to 0 results in game over, and the player has to start over. There is an option to select the starting level in the menu, and a help section for instructions to play the game.
+ </p>
           <h2 className="text-3xl font-bold mb-2">Screenshots</h2>
           <div className="grid grid-cols-3 gap-4 mb-4">
             {/* Add your images here */}
@@ -38,7 +44,7 @@ const Projects = () => {
             <iframe 
               width="560" 
               height="315" 
-              src="https://www.youtube.com/embed/pMUw48neZS4?si=BNNX0HRKyKEVBdH0" 
+              src="https://www.youtube.com/embed/qABiwNVhDQc?si=EgZO5KRdjtVMJpD6" 
               title="YouTube video player" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -46,8 +52,11 @@ const Projects = () => {
             />
           </div>
           <h2 className="text-3xl font-bold mb-2">Download</h2>
+          <p className="">
+            <a href="https://manoyal.itch.io/mini-assailants" download>Click <span className="font-bold">here </span>to download the game</a>
+          </p>
           <p className="mb-4">
-            <a href="https://github.com/GauravDe-git/MiniAssailants_CppGame/releases/download/v1.0.0/MiniAssailants_CppGame.zip" download>Click here to download the game</a>
+            <a href="https://github.com/GauravDe-git/MiniAssailants_CppGame" download>Click <span className="font-bold">here </span>to see source code</a>
           </p>
         </div>
       </div>
